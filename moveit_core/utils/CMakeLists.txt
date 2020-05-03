@@ -24,6 +24,7 @@ if(BUILD_TESTING)
     src/robot_model_test_utils.cpp)
   ament_target_dependencies(${MOVEIT_TEST_LIB_NAME}
     Boost
+    rclcpp
     urdf
     srdfdom
     urdfdom
