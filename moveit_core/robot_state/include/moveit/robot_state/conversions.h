@@ -51,6 +51,7 @@ namespace core
  * @param state The resultant MoveIt robot state
  * @return True if successful, false if failed for any reason
  */
+MOVEIT_CORE_PUBLIC
 bool jointStateToRobotState(const sensor_msgs::msg::JointState& joint_state, RobotState& state);
 
 /**
@@ -61,6 +62,7 @@ bool jointStateToRobotState(const sensor_msgs::msg::JointState& joint_state, Rob
  * @param copy_attached_bodies Flag to include attached objects in robot state copy
  * @return True if successful, false if failed for any reason
  */
+MOVEIT_CORE_PUBLIC
 bool robotStateMsgToRobotState(const Transforms& tf, const moveit_msgs::msg::RobotState& robot_state, RobotState& state,
                                bool copy_attached_bodies = true);
 
@@ -71,6 +73,7 @@ bool robotStateMsgToRobotState(const Transforms& tf, const moveit_msgs::msg::Rob
  * @param copy_attached_bodies Flag to include attached objects in robot state copy
  * @return True if successful, false if failed for any reason
  */
+MOVEIT_CORE_PUBLIC
 bool robotStateMsgToRobotState(const moveit_msgs::msg::RobotState& robot_state, RobotState& state,
                                bool copy_attached_bodies = true);
 
@@ -80,6 +83,7 @@ bool robotStateMsgToRobotState(const moveit_msgs::msg::RobotState& robot_state, 
  * @param robot_state The resultant RobotState *message
  * @param copy_attached_bodies Flag to include attached objects in robot state copy
  */
+MOVEIT_CORE_PUBLIC
 void robotStateToRobotStateMsg(const RobotState& state, moveit_msgs::msg::RobotState& robot_state,
                                bool copy_attached_bodies = true);
 
@@ -88,14 +92,17 @@ void robotStateToRobotStateMsg(const RobotState& state, moveit_msgs::msg::RobotS
  * @param attached_bodies The input MoveIt attached body objects
  * @param attached_collision_objs The resultant AttachedCollisionObject messages
  */
+MOVEIT_CORE_PUBLIC
 void attachedBodiesToAttachedCollisionObjectMsgs(
     const std::vector<const AttachedBody*>& attached_bodies,
     std::vector<moveit_msgs::msg::AttachedCollisionObject>& attached_collision_objs);
+
 /**
  * @brief Convert a MoveIt robot state to a joint state message
  * @param state The input MoveIt robot state object
  * @param robot_state The resultant JointState message
  */
+MOVEIT_CORE_PUBLIC
 void robotStateToJointStateMsg(const RobotState& state, sensor_msgs::msg::JointState& joint_state);
 
 /**
@@ -105,6 +112,7 @@ void robotStateToJointStateMsg(const RobotState& state, sensor_msgs::msg::JointS
  * @param state The resultant MoveIt robot state
  * @return True if successful, false if failed for any reason
  */
+MOVEIT_CORE_PUBLIC
 bool jointTrajPointToRobotState(const trajectory_msgs::msg::JointTrajectory& trajectory, std::size_t point_id,
                                 RobotState& state);
 
@@ -116,6 +124,7 @@ bool jointTrajPointToRobotState(const trajectory_msgs::msg::JointTrajectory& tra
  * @param include_header - flag to prefix the output with a line of joint names.
  * @param separator - allows to override the comma seperator with any symbol, such as a white space
  */
+MOVEIT_CORE_PUBLIC
 void robotStateToStream(const RobotState& state, std::ostream& out, bool include_header = true,
                         const std::string& separator = ",");
 
@@ -128,6 +137,7 @@ void robotStateToStream(const RobotState& state, std::ostream& out, bool include
  * @param include_header - flag to prefix the output with a line of joint names.
  * @param separator - allows to override the comma seperator with any symbol, such as a white space
  */
+MOVEIT_CORE_PUBLIC
 void robotStateToStream(const RobotState& state, std::ostream& out,
                         const std::vector<std::string>& joint_groups_ordering, bool include_header = true,
                         const std::string& separator = ",");
@@ -139,6 +149,7 @@ void robotStateToStream(const RobotState& state, std::ostream& out,
  * @param separator - allows to override the comma seperator with any symbol, such as a white space
  * \return true on success
  */
+MOVEIT_CORE_PUBLIC
 void streamToRobotState(RobotState& state, const std::string& line, const std::string& separator = ",");
 }  // namespace core
 }  // namespace moveit
