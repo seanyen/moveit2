@@ -5,6 +5,7 @@ set_target_properties(${MOVEIT_LIB_NAME} PROPERTIES VERSION "${${PROJECT_NAME}_V
 set_target_properties(${MOVEIT_LIB_NAME} PROPERTIES WINDOWS_EXPORT_ALL_SYMBOLS TRUE)
 
 ament_target_dependencies(${MOVEIT_LIB_NAME}
+  moveit_core
   moveit_msgs
   rclcpp
   Boost
